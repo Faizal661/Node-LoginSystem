@@ -1,0 +1,34 @@
+<%-include('header') -%>
+
+    <div class="text-center center-div" id="login">
+        <% if(locals.logout){ %>
+            <h5 class="text-danger text-center fw-bold">
+                <%= logout %>
+            </h5>
+        <% } %>    
+        <div class="container w-25 border py-5">
+            <div class="title pb-5">
+                <h2 class="font-weight-bold">Login Page</h2>
+                  
+            </div>
+            <form action="/route/login" method="post">
+                <div class="form-group">
+                    <input type="text" class="form-control mb-3" placeholder="username" name="username">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" name="password" placeholder="password">
+                </div>
+                <% if(locals.invalid){ %>
+                    <div class="text-danger text-center ">
+                        <%= invalid %>
+                    </div>
+                <% } %>
+                <button type="submit" class="btn btn-dark rounded-pill">SUBMIT</button>
+
+            </form>
+            
+        </div>
+    </div>
+    
+
+<%-include('footer') -%>
