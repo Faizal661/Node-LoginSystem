@@ -10,17 +10,25 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto">
-                    <a href="/route/logout" class="btn btn-light btn-outline-dark ">Log out</a>
+                    <a href="/logout" class="btn btn-light btn-outline-dark ">Log out</a>
                 </div>
             </div>
         </div>
     </nav>
 
     <div class="text-center center-div mt-5" id="login">
+
         <div class="container w-50  py-5 mt-3">
-            <h1>hi "<%= locals.user ?user :"User" %>"</h1>
-            <h1>Welcome to Homepage</h1>
+            <% if(locals.msg){ %>
+                <h1 class="text-danger text-center ">
+                    <%= msg %>
+                </h1>
+                <% }else{ %>
+                    <h1>hi <%= locals.user ?user :"User" %>
+                    </h1>
+                    <h1>Welcome to Homepage</h1>
         </div>
+        <% } %>
 
     </div>
 
