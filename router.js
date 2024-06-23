@@ -1,4 +1,5 @@
 var express=require('express')
+var url =require('url')
 var router=express.Router();
 
 const credentials={
@@ -61,5 +62,8 @@ router.get('/logout',requireLogin,(req,res)=>{
     })
 })
 
+router.get('*',(req,res)=>{
+    res.send('page not found'+req.url)
+})
 
 module.exports=router;
